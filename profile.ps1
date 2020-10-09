@@ -1,6 +1,7 @@
 # My Custom PowerShell profile.
 # James Harrison
-# Location: C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1
+# Location: C:\Users\{username}\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+# OR C:\Windows\System32\WindowsPowerShell\v1.0\profile.ps1
 
 # << Modules >>
 Import-Module posh-git
