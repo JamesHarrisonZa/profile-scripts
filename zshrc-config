@@ -1,0 +1,79 @@
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/home/james/.oh-my-zsh"
+
+# Set Theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# COMPLETION_WAITING_DOTS="true"
+
+# plugins
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview
+plugins=(
+ git
+ yarn
+ docker
+ zsh-autosuggestions
+ zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# << James Custom >>
+
+# Turn off all beeps
+unsetopt BEEP
+
+# powerlevel10k Theme
+#To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Load NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Environment variables
+export NPM_IDENT="REDACTED"
+export NPM_TOKEN="REDACTED"
+export NUGET_PAT="REDACTED"
+
+# Aliases
+# For a full list of active aliases, run `alias`.
+alias zshconfig="code ~/.zshrc"
+alias c="clear"
+alias j="jest"
+alias gpl="git pull"
+alias yb="yarn build"
+alias ys="yarn start"
+alias yt="yarn test"
+alias nb="npm build"
+alias ns="npm start"
+alias nt="npm test"
+
+# Welcome message
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+cat /home/james/42
+
+
+# VCXSRV / XLaunch. Display GUIs from installed apps in WSL. Like chrome for Cypress
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
