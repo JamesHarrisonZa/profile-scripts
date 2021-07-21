@@ -69,6 +69,8 @@ alias yt="yarn test"
 alias nb="npm build"
 alias ns="npm start"
 alias nt="npm test"
+alias db="dotnet build"
+alias dt="dotnet test"
 
 # Welcome message
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
