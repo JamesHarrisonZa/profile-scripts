@@ -58,6 +58,14 @@ New-Alias -Name ni -Value Get-Npm-Install -Force -Option AllScope
 function Get-Npm-ListGlobal { & npm list -g --depth 0 }
 New-Alias -Name ng -Value Get-Npm-ListGlobal -Force -Option AllScope
 
+
+# < Dotnet >
+function Get-Dotnet-build { & dotnet build }
+New-Alias -Name db -Value Get-Dotnet-build -Force -Option AllScope
+
+function Get-Dotnet-test { & dotnet test }
+New-Alias -Name dt -Value Get-Dotnet-test -Force -Option AllScope
+
 # << Colours & welcome message >>
 $colours = "DarkBlue", "DarkGreen", "DarkCyan", "DarkRed", "DarkMagenta", "DarkYellow", "Gray", "DarkGray", "Blue", "Green", "Cyan", "Red", "Magenta", "Yellow"
 $pathColour = "#{0:X6}" -f (Get-Random -Maximum 0xFFFFFF)
