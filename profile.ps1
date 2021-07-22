@@ -58,7 +58,6 @@ New-Alias -Name ni -Value Get-Npm-Install -Force -Option AllScope
 function Get-Npm-ListGlobal { & npm list -g --depth 0 }
 New-Alias -Name ng -Value Get-Npm-ListGlobal -Force -Option AllScope
 
-
 # < Dotnet >
 function Get-Dotnet-build { & dotnet build }
 New-Alias -Name db -Value Get-Dotnet-build -Force -Option AllScope
