@@ -23,11 +23,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # plugins
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview
 plugins=(
- git
- yarn
- docker
- zsh-autosuggestions
- zsh-syntax-highlighting
+  git
+  yarn
+  docker
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -69,12 +69,13 @@ alias yt="yarn test"
 alias nb="npm run build"
 alias ns="npm start"
 alias nt="npm test"
-alias db="dotnet build"
-alias dt="dotnet test"
+alias m="~/go/bin/gomatrix"
+
+eval $(thefuck --alias)
 
 # Welcome message
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-cat /home/james/42
+cat ~/42
 
 
 # VCXSRV / XLaunch. Display GUIs from installed apps in WSL. Like chrome for Cypress
