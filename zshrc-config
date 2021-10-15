@@ -77,6 +77,6 @@ alias m="~/go/bin/gomatrix"
 eval $(thefuck --alias)
 
 # Welcome message
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # cat ~/42
-m
+m --fps=60
