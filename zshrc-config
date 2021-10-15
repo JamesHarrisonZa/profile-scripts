@@ -79,4 +79,4 @@ eval $(thefuck --alias)
 # Welcome message
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # cat ~/42
-m --fps=60
+m -k --fps=60
