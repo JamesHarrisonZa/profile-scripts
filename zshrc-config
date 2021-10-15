@@ -52,10 +52,13 @@ unsetopt BEEP
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+# VCXSRV / XLaunch. Display GUIs from installed apps in WSL. Like chrome for Cypress
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+
 # Environment variables
-export NPM_IDENT="REDACTED"
-export NPM_TOKEN="REDACTED"
-export NUGET_PAT="REDACTED"
+export NPM_IDENT=$(cat ~/secrets/NPM_IDENT)
+export NPM_TOKEN=$(cat ~/secrets/NPM_TOKEN)
+export NUGET_PAT=$(cat ~/secrets/NUGET_PAT)
 
 # Aliases
 # For a full list of active aliases, run `alias`.
@@ -74,9 +77,6 @@ alias m="~/go/bin/gomatrix"
 eval $(thefuck --alias)
 
 # Welcome message
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-cat ~/42
-
-
-# VCXSRV / XLaunch. Display GUIs from installed apps in WSL. Like chrome for Cypress
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+# cat ~/42
+m
