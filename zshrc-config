@@ -63,16 +63,28 @@ export NUGET_PAT=$(cat ~/secrets/NUGET_PAT)
 # Aliases
 # For a full list of active aliases, run `alias`.
 alias zshconfig="code ~/.zshrc"
+alias zc="code ~/.zshrc"
+alias zs="source ~/.zshrc"
+
 alias c="clear"
 alias j="jest"
+
 alias gpl="git pull"
+
 alias yb="yarn build"
 alias ys="yarn start"
 alias yt="yarn test"
+
 alias nb="npm run build"
 alias nd="npm run dev"
 alias ns="npm start"
 alias nt="npm test"
+
+alias db="dotnet build"
+alias dt="dotnet test"
+alias dr="dotnet run"
+alias df="dotnet format"
+
 alias m="~/go/bin/gomatrix"
 
 eval $(thefuck --alias)
